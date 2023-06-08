@@ -1,0 +1,1 @@
+print('Test of Visual Studio Code')
