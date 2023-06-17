@@ -2,7 +2,7 @@ import requests
 import json
 import webbrowser
 from pprint import pprint
-import APIauthHEADERcredentials
+import ignore.APIauthHEADERcredentials
 
 def get_json_from_response(response):
     try:
@@ -17,12 +17,12 @@ def get_favourite_cats(userId):
         'sub_id' : userId
         }
     r = requests.get('https://api.thecatapi.com/v1/favourites', params,
-                 headers=APIauthHEADERcredentials.headersParam)
+                 headers=ignore.APIauthHEADERcredentials.headersParam)
     return get_json_from_response(r)
 
 def get_random_cat():
     r = requests.get('https://api.thecatapi.com/v1/images/search',
-                     headers=APIauthHEADERcredentials.headersParam)
+                     headers=ignore.APIauthHEADERcredentials.headersParam)
     return get_json_from_response(r)[0]
 
 def add_favourite_cat(catId, userId):
@@ -31,12 +31,12 @@ def add_favourite_cat(catId, userId):
         'sub_id' : userId
         }
     r = requests.post('https://api.thecatapi.com/v1/favourites', json = catData,
-                     headers=APIauthHEADERcredentials.headersParam)
+                     headers=ignore.APIauthHEADERcredentials.headersParam)
     return get_json_from_response(r)
 
 def remove_favourite_cat(favouriteCatId):
     r = requests.delete('https://api.thecatapi.com/v1/favourites/' + favouriteCatId,
-                     headers=APIauthHEADERcredentials.headersParam)
+                     headers=ignore.APIauthHEADERcredentials.headersParam)
     return get_json_from_response(r)
 '''
 user enters login and password
