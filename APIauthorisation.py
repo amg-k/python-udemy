@@ -3,8 +3,10 @@ import json
 import webbrowser
 from pprint import pprint
 
+api_key_value = str(input("Type API key: "))
+
 params = {
-    'api_key' : 'b0cf3ba4e2c0ebfcdcbe901c317fcffb17f57c95',
+    'api_key' : api_key_value,
     'country' : 'pl',
     'year' : 2023,
     'month' : 12
